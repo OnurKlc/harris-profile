@@ -1,7 +1,7 @@
 <div class="container">
   <table class="score-table" width="1000">
     <thead>
-      <tr style="color: rgb(171, 171, 171);">
+      <tr style="color: rgb(171, 171, 171);" class="includeInCSV">
         <th style='visibility:collapse' width="200"></th>
         <th width="150">
           <div contenteditable class="editable">Concept 1</div>
@@ -45,7 +45,7 @@
       </tr>
     </thead>
     <tbody style="color: rgb(171, 171, 171);">
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="firstRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="firstRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable" style="min-width: 60px">Criteria 1</div>
@@ -76,7 +76,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="secondRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="secondRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 2</div>
@@ -107,7 +107,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="thirdRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="thirdRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 3</div>
@@ -138,7 +138,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fourtRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fourtRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 4</div>
@@ -169,7 +169,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fifthRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fifthRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 5</div>
@@ -200,7 +200,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="sixthRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="sixthRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 6</div>
@@ -231,7 +231,7 @@
         </td>
       </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="eightRow">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="seventhRow" class="includeInCSV">
         <td class="firstColumn">
           <img src="icon" alt="icon" id="icon" draggable="false" />
           <div contenteditable class="editable">Criteria 7</div>
@@ -265,7 +265,7 @@
   </table>
   <div class="buttons">
     <button class="refresh-button" onclick="refreshScores()">Refresh Scores</button>
-    <button class="export-button">Export as SVG</button>
+    <button class="export-button" onclick="exportTableToCSV('harris_profile.csv')">Export as SVG</button>
   </div>
 </div>
 <script>
@@ -333,6 +333,70 @@
     for (let span of spans) {
       span.style.backgroundColor = 'transparent'
     }
+  }
+
+  function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll(".score-table .includeInCSV");
+
+    // Extract header
+    var header = [];
+    var headerCells = rows[0].querySelectorAll("th .editable");
+    header.push("");
+    headerCells.forEach(cell => header.push(cell.innerText.trim()));
+    csv.push(header.join(","));
+
+    // Extract data rows
+    for (var i = 1; i < rows.length; i++) {
+      var row = [];
+      var firstCell = rows[i].querySelector("td .editable");
+      row.push(firstCell ? firstCell.innerText.trim() : "");
+
+      var scoreCells = rows[i].querySelectorAll("td .header-points span");
+      for (var j = 0; j < scoreCells.length; j += 4) {
+        var score = "";
+        if (scoreCells[j + 3].style.backgroundColor === 'rgb(36, 140, 41)') { // +2
+          score = '+2';
+        } else if (scoreCells[j + 2].style.backgroundColor === 'rgb(36, 140, 41)') { // +1
+          score = '+1';
+        } else if (scoreCells[j].style.backgroundColor === 'rgb(253, 33, 37)') { // -2
+          score = '-2';
+        } else if (scoreCells[j + 1].style.backgroundColor === 'rgb(253, 33, 37)') { // -1
+          score = '-1';
+        }
+        row.push(score);
+      }
+      csv.push(row.join(","));
+    }
+
+    // Download CSV
+    downloadCSV(csv.join("\n"), filename);
+  }
+
+  function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], { type: "text/csv" });
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide link
+    downloadLink.style.display = "none";
+
+    // Add the link to the DOM
+    document.body.appendChild(downloadLink);
+
+    // Click the link
+    downloadLink.click();
   }
 
 </script>
