@@ -1,0 +1,431 @@
+<div class="container">
+  <table class="score-table" width="1000">
+    <thead>
+      <tr style="color: rgb(171, 171, 171);">
+        <th style='visibility:collapse' width="200"></th>
+        <th width="150">
+          <div contenteditable class="editable">Concept 1</div>
+        </th>
+        <th width="150">
+          <div contenteditable class="editable">Concept 2</div>
+        </th>
+        <th width="150">
+          <div contenteditable class="editable">Concept 3</div>
+        </th>
+      </tr>
+      <tr class="height: 20px">
+        <th style='visibility:collapse'></th>
+      </tr>
+      <tr>
+        <th style='visibility:collapse'></th>
+        <th style="padding: 0; height: 40px;">
+          <div class="header-points">
+            <span>-2</span>
+            <span>-1</span>
+            <span>+1</span>
+            <span>+2</span>
+          </div>
+        </th>
+        <th style="padding: 0; height: 40px">
+          <div class="header-points">
+            <span>-2</span>
+            <span>-1</span>
+            <span>+1</span>
+            <span>+2</span>
+          </div>
+        </th>
+        <th style="padding: 0; height: 40px">
+          <div class="header-points">
+            <span>-2</span>
+            <span>-1</span>
+            <span>+1</span>
+            <span>+2</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody style="color: rgb(171, 171, 171);">
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="firstRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable" style="min-width: 60px">Criteria 1</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="secondRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 2</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="thirdRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 3</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fourtRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 4</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fifthRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 5</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="sixthRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 6</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+
+      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="eightRow">
+        <td class="firstColumn">
+          <img src="icon" alt="icon" id="icon" draggable="false" />
+          <div contenteditable class="editable">Criteria 7</div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+        <td style="padding: 0; height: 1px">
+          <div class="header-points">
+            <span data-id="-2"></span>
+            <span data-id="-1"></span>
+            <span data-id="+1"></span>
+            <span data-id="+2"></span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="buttons">
+    <button class="refresh-button" onclick="refreshScores()">Refresh Scores</button>
+    <button class="export-button">Export as SVG</button>
+  </div>
+</div>
+<script>
+  const icon = `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAAD
+  TLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChn
+  VFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPh
+  AAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2w
+  BDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+  QEBAQEBAQEBD/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMEBQn/xAApEAABBAADBQkAAAAAAAAAAAABAAIDBAURMQYSITNRExQVFiJBYWLR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAA
+  AAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOmeKW7FDDrFyrQluzQsLmV4yA6Q9ASojErhxGpT8HsCGxXdNJYLm7sLxllG4Z6nM6dPfjlPal0DNncQdanvQxCB2++lz2j6fKxA+p5iwlvfMXMrqEhjYQ7sHt9ObpeHM01/M
+  w36IiAiIgIiIP/Z`
+
+  document.querySelectorAll('#icon').forEach(img => img.src = icon)
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text")
+    const sourceRow = document.getElementById(data)
+    const targetRow = ev.target.parentNode.closest('tr')
+    const targetIndex = Array.from(targetRow.parentNode.children).indexOf(targetRow)
+    const sourceIndex = Array.from(sourceRow.parentNode.children).indexOf(sourceRow)
+    if (sourceIndex === targetIndex) {
+      return
+    } else if (sourceIndex < targetIndex) {
+      targetRow.after(sourceRow)
+    } else {
+      targetRow.before(sourceRow)
+    }
+  }
+
+  function clearColors(target) {
+    const list = target.parentElement.children
+    for (let span of list) {
+      span.style.backgroundColor = 'transparent'
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.tagName === 'SPAN') {
+      clearColors(e.target)
+      if (e.target.dataset.id === '-2') {
+        e.target.nextElementSibling.style.backgroundColor = 'rgb(253, 33, 37)';
+        e.target.style.backgroundColor = 'rgb(253, 33, 37)';
+      } else if (e.target.dataset.id === '-1') {
+        e.target.style.backgroundColor = 'rgb(253, 33, 37)';
+      } else if (e.target.dataset.id === '+1') {
+        e.target.style.backgroundColor = 'rgb(36, 140, 41)';
+      } else if (e.target.dataset.id === '+2') {
+        e.target.previousElementSibling.style.backgroundColor = 'rgb(36, 140, 41)';
+        e.target.style.backgroundColor = 'rgb(36, 140, 41)';
+      }
+    }
+  })
+
+  function refreshScores() {
+    const spans = document.querySelectorAll('span')
+    for (let span of spans) {
+      span.style.backgroundColor = 'transparent'
+    }
+  }
+
+</script>
+<style>
+  :root {
+    --green: rgb(36, 140, 41);
+    --red: rgb(253, 33, 37);
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .score-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+  }
+
+  .firstColumn {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .firstColumn img {
+    cursor: grab;
+  }
+
+  .editable {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px 5px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-points {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100%);
+
+  }
+
+  .header-points span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(204, 204, 204);
+    border-bottom: none;
+    border-top: none;
+    border-collapse: collapse;
+    color: rgb(123, 123, 123);
+  }
+
+  .header-points span:first-child {
+    border-left: none;
+  }
+
+  .header-points span:last-child {
+    border-right: none;
+  }
+
+  .score-table th,
+  .score-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(248, 248, 248);
+  }
+
+  .buttons {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .refresh-button,
+  .export-button {
+    background-color: rgb(248, 248, 248);
+    color: rgb(123, 123, 123);
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+  }
+</style>
