@@ -1,526 +1,617 @@
 <div class="container">
-  <table class="score-table" width="1000">
-    <thead>
-      <tr style="color: rgb(171, 171, 171);" class="includeInCSV">
-        <th style='visibility:collapse' width="200"></th>
-        <th width="150">
-          <div contenteditable class="editable">Concept 1</div>
-        </th>
-        <th width="150">
-          <div contenteditable class="editable">Concept 2</div>
-        </th>
-        <th width="150">
-          <div contenteditable class="editable">Concept 3</div>
-        </th>
-      </tr>
-      <tr class="height: 20px">
-        <th style='visibility:collapse'></th>
-      </tr>
-      <tr>
-        <th style='visibility:collapse'></th>
-        <th style="padding: 0; height: 40px;">
-          <div class="header-points">
-            <span>-2</span>
-            <span>-1</span>
-            <span>+1</span>
-            <span>+2</span>
-          </div>
-        </th>
-        <th style="padding: 0; height: 40px">
-          <div class="header-points">
-            <span>-2</span>
-            <span>-1</span>
-            <span>+1</span>
-            <span>+2</span>
-          </div>
-        </th>
-        <th style="padding: 0; height: 40px">
-          <div class="header-points">
-            <span>-2</span>
-            <span>-1</span>
-            <span>+1</span>
-            <span>+2</span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody style="color: rgb(171, 171, 171);">
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="firstRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable" style="min-width: 60px">Criteria 1</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+    <table class="score-table">
+        <thead>
+        <tr class="includeInCSV">
+            <th style='visibility:collapse'></th>
+            <th>
+                <div contenteditable class="editable">Type concept title</div>
+            </th>
+            <th>
+                <div contenteditable class="editable">Type concept title</div>
+            </th>
+            <th>
+                <div contenteditable class="editable">Type concept title</div>
+            </th>
+        </tr>
+        <tr class="height: 20px">
+            <th style='visibility:collapse'></th>
+        </tr>
+        <tr>
+            <th style='visibility:collapse'></th>
+            <th style="padding: 0; height: 40px;">
+                <div class="header-points">
+                    <span>-2</span>
+                    <span>-1</span>
+                    <span>+1</span>
+                    <span>+2</span>
+                </div>
+            </th>
+            <th style="padding: 0; height: 40px">
+                <div class="header-points">
+                    <span>-2</span>
+                    <span>-1</span>
+                    <span>+1</span>
+                    <span>+2</span>
+                </div>
+            </th>
+            <th style="padding: 0; height: 40px">
+                <div class="header-points">
+                    <span>-2</span>
+                    <span>-1</span>
+                    <span>+1</span>
+                    <span>+2</span>
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="firstRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable" style="min-width: 60px">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="secondRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 2</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="secondRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="thirdRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 3</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="thirdRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fourtRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 4</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fourtRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fifthRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 5</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="fifthRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="sixthRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 6</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="sixthRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
 
-      <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" id="seventhRow" class="includeInCSV">
-        <td class="firstColumn">
-          <img src="icon" alt="icon" id="icon" draggable="false" />
-          <div contenteditable class="editable">Criteria 7</div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-        <td style="padding: 0; height: 1px">
-          <div class="header-points">
-            <span data-id="-2"></span>
-            <span data-id="-1"></span>
-            <span data-id="+1"></span>
-            <span data-id="+2"></span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="buttons">
-    <button class="refresh-button" onclick="refreshScores()">
-      <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="35" height="34" rx="4" fill="#F5F5F5" />
-        <path
-          d="M17.0254 22.752C16.209 22.752 15.4395 22.5957 14.7168 22.2832C13.998 21.9707 13.3633 21.5391 12.8125 20.9883C12.2617 20.4375 11.8301 19.8027 11.5176 19.084C11.2051 18.3613 11.0488 17.5918 11.0488 16.7754C11.0488 15.959 11.2051 15.1914 11.5176 14.4727C11.8301 13.75 12.2598 13.1133 12.8066 12.5625C13.3574 12.0117 13.9922 11.5801 14.7109 11.2676C15.4336 10.9551 16.2031 10.7988 17.0195 10.7988C17.8359 10.7988 18.6055 10.9551 19.3281 11.2676C20.0508 11.5801 20.6875 12.0117 21.2383 12.5625C21.7891 13.1133 22.2207 13.75 22.5332 14.4727C22.8457 15.1914 23.002 15.959 23.002 16.7754C23.002 17.5918 22.8457 18.3613 22.5332 19.084C22.2207 19.8027 21.7891 20.4375 21.2383 20.9883C20.6875 21.5391 20.0508 21.9707 19.3281 22.2832C18.6094 22.5957 17.8418 22.752 17.0254 22.752ZM14.3301 17.0508C14.3301 17.5547 14.4512 18.0137 14.6934 18.4277C14.9355 18.8418 15.2598 19.1719 15.666 19.418C16.0723 19.6602 16.5254 19.7812 17.0254 19.7812C17.5215 19.7812 17.9727 19.6602 18.3789 19.418C18.7891 19.1719 19.1152 18.8438 19.3574 18.4336C19.5996 18.0234 19.7207 17.5703 19.7207 17.0742C19.7207 16.9609 19.6777 16.8652 19.5918 16.7871C19.5098 16.7051 19.4141 16.6641 19.3047 16.6641C19.1875 16.6641 19.0879 16.7051 19.0059 16.7871C18.9238 16.8652 18.8828 16.9609 18.8828 17.0742C18.8828 17.4219 18.7988 17.7363 18.6309 18.0176C18.4668 18.2988 18.2441 18.5234 17.9629 18.6914C17.6816 18.8594 17.3691 18.9434 17.0254 18.9434C16.6816 18.9434 16.3691 18.8594 16.0879 18.6914C15.8066 18.5234 15.582 18.2988 15.4141 18.0176C15.25 17.7363 15.168 17.4219 15.168 17.0742C15.168 16.7305 15.25 16.418 15.4141 16.1367C15.582 15.8555 15.8066 15.6328 16.0879 15.4688C16.3691 15.3008 16.6816 15.2168 17.0254 15.2168C17.1113 15.2168 17.1816 15.2207 17.2363 15.2285L16.6562 15.8086C16.5781 15.8867 16.5391 15.9785 16.5391 16.084C16.5391 16.1934 16.5762 16.2852 16.6504 16.3594C16.7246 16.4336 16.8164 16.4707 16.9258 16.4707C17.0234 16.4707 17.1113 16.4316 17.1895 16.3535L18.3613 15.1816C18.4355 15.1113 18.4707 15.0195 18.4668 14.9062C18.4668 14.793 18.4316 14.6992 18.3613 14.625L17.2012 13.4414C17.166 13.4062 17.123 13.377 17.0723 13.3535C17.0254 13.3301 16.9766 13.3184 16.9258 13.3184C16.8164 13.3184 16.7246 13.3574 16.6504 13.4355C16.5762 13.5098 16.5391 13.5996 16.5391 13.7051C16.5391 13.7598 16.5488 13.8125 16.5684 13.8633C16.5879 13.9102 16.6133 13.9512 16.6445 13.9863L17.0664 14.4199C17.0469 14.416 17.0215 14.4141 16.9902 14.4141C16.9629 14.4102 16.9355 14.4082 16.9082 14.4082C16.4551 14.4082 16.0312 14.5254 15.6367 14.7598C15.2461 14.9941 14.9297 15.3125 14.6875 15.7148C14.4492 16.1133 14.3301 16.5586 14.3301 17.0508Z"
-          fill="black" fill-opacity="0.5" />
-      </svg>
-      <span>Refresh Scores</span>
-    </button>
-    <button class="export-button" onclick="exportTableToCSV('harris_profile.csv')">
-      <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="35" height="34" rx="4" fill="#F5F5F5" />
-        <path
-          d="M17.0254 22.9043C16.209 22.9043 15.4395 22.748 14.7168 22.4355C13.998 22.123 13.3633 21.6914 12.8125 21.1406C12.2617 20.5898 11.8301 19.9551 11.5176 19.2363C11.2051 18.5137 11.0488 17.7441 11.0488 16.9277C11.0488 16.1113 11.2051 15.3438 11.5176 14.625C11.8301 13.9023 12.2598 13.2656 12.8066 12.7148C13.3574 12.1641 13.9922 11.7324 14.7109 11.4199C15.4336 11.1074 16.2031 10.9512 17.0195 10.9512C17.8359 10.9512 18.6055 11.1074 19.3281 11.4199C20.0508 11.7324 20.6875 12.1641 21.2383 12.7148C21.7891 13.2656 22.2207 13.9023 22.5332 14.625C22.8457 15.3438 23.002 16.1113 23.002 16.9277C23.002 17.7441 22.8457 18.5137 22.5332 19.2363C22.2207 19.9551 21.7891 20.5898 21.2383 21.1406C20.6875 21.6914 20.0508 22.123 19.3281 22.4355C18.6094 22.748 17.8418 22.9043 17.0254 22.9043ZM15.3086 19.8809H18.7363C19.0645 19.8809 19.3125 19.7969 19.4805 19.6289C19.6523 19.4609 19.7383 19.2129 19.7383 18.8848V15.9141C19.7383 15.5859 19.6523 15.3398 19.4805 15.1758C19.3125 15.0078 19.0645 14.9238 18.7363 14.9238H17.7871V15.5391H18.7246C18.9863 15.5391 19.1172 15.6738 19.1172 15.9434V18.8672C19.1172 19.1367 18.9863 19.2715 18.7246 19.2715H15.3145C15.0527 19.2715 14.9219 19.1367 14.9219 18.8672V15.9434C14.9219 15.6738 15.0527 15.5391 15.3145 15.5391H16.2637V14.9238H15.3086C14.9844 14.9238 14.7363 15.0078 14.5645 15.1758C14.3965 15.3438 14.3125 15.5898 14.3125 15.9141V18.8848C14.3125 19.2129 14.3965 19.4609 14.5645 19.6289C14.7363 19.7969 14.9844 19.8809 15.3086 19.8809ZM17.0254 17.5078C17.1074 17.5078 17.1777 17.4805 17.2363 17.4258C17.2949 17.3672 17.3242 17.2969 17.3242 17.2148V14.1621L17.3125 13.875L17.5762 14.1621L17.8516 14.4434C17.9023 14.498 17.9727 14.5254 18.0625 14.5254C18.1406 14.5254 18.2051 14.502 18.2559 14.4551C18.3105 14.4043 18.3379 14.3398 18.3379 14.2617C18.3379 14.2227 18.3301 14.1875 18.3145 14.1562C18.2988 14.125 18.2754 14.0938 18.2441 14.0625L17.2363 13.084C17.1699 13.0137 17.0977 12.9785 17.0195 12.9785C16.9414 12.9785 16.8711 13.0137 16.8086 13.084L15.8008 14.0566C15.7383 14.1191 15.707 14.1875 15.707 14.2617C15.707 14.3398 15.7324 14.4043 15.7832 14.4551C15.8379 14.502 15.9043 14.5254 15.9824 14.5254C16.0723 14.5254 16.1426 14.498 16.1934 14.4434L16.4688 14.1621L16.7324 13.875L16.7207 14.1621V17.2148C16.7207 17.2969 16.75 17.3672 16.8086 17.4258C16.8672 17.4805 16.9395 17.5078 17.0254 17.5078Z"
-          fill="black" fill-opacity="0.5" />
-      </svg>
-      <span>Export as SVG</span>
-    </button>
-  </div>
+        <tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"
+            id="seventhRow"
+            class="includeInCSV">
+            <td class="firstColumn">
+                <div contenteditable class="editable">Type your criteria</div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+            <td style="padding: 0">
+                <div class="header-points">
+                    <span data-id="-2"></span>
+                    <span data-id="-1"></span>
+                    <span data-id="+1"></span>
+                    <span data-id="+2"></span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="buttons">
+        <button class="refresh-button" onclick="refreshScores()">
+            <span>Clear All Scores</span>
+            <span class="hover-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#FFFFFF">
+                <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z" />
+            </svg>
+            </span>
+            <span class="stable-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#000000"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg>
+            </span>
+        </button>
+        <button class="export-button" onclick="exportTableToCSV('harris_profile.csv')">
+            <span>Export as SVG</span>
+            <span class="hover-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#FFFFFF"><path
+                      d="M240-40q-33 0-56.5-23.5T160-120v-440q0-33 23.5-56.5T240-640h120v80H240v440h480v-440H600v-80h120q33 0 56.5 23.5T800-560v440q0 33-23.5 56.5T720-40H240Zm200-280v-447l-64 64-56-57 160-160 160 160-56 57-64-64v447h-80Z" /></svg>
+            </span>
+            <span class="stable-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#000000"><path d="M240-40q-33 0-56.5-23.5T160-120v-440q0-33 23.5-56.5T240-640h120v80H240v440h480v-440H600v-80h120q33 0 56.5 23.5T800-560v440q0 33-23.5 56.5T720-40H240Zm200-280v-447l-64 64-56-57 160-160 160 160-56 57-64-64v447h-80Z"/></svg>
+            </span>
+        </button>
+    </div>
 </div>
 <script>
-  const icon = `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAAD
-  TLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChn
-  VFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPh
-  AAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2w
-  BDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
-  QEBAQEBAQEBD/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMEBQn/xAApEAABBAADBQkAAAAAAAAAAAABAAIDBAURMQYSITNRExQVFiJBYWLR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAA
-  AAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOmeKW7FDDrFyrQluzQsLmV4yA6Q9ASojErhxGpT8HsCGxXdNJYLm7sLxllG4Z6nM6dPfjlPal0DNncQdanvQxCB2++lz2j6fKxA+p5iwlvfMXMrqEhjYQ7sHt9ObpeHM01/M
-  w36IiAiIgIiIP/Z`
+    const dragIcon = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_156_389" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                        <rect width="20" height="20" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_156_389)">
+                        <path d="M7.49558 15.6795C7.17001 15.6795 6.89278 15.5636 6.66387 15.3317C6.43499 15.0999 6.32054 14.8212 6.32054 14.4956C6.32054 14.17 6.43647 13.8928 6.66831 13.6639C6.90015 13.435 7.17885 13.3206 7.50442 13.3206C7.82999 13.3206 8.10722 13.4365 8.33613 13.6683C8.56501 13.9002 8.67946 14.1789 8.67946 14.5044C8.67946 14.83 8.56353 15.1072 8.33169 15.3361C8.09985 15.565 7.82115 15.6795 7.49558 15.6795ZM12.4956 15.6795C12.17 15.6795 11.8928 15.5636 11.6639 15.3317C11.435 15.0999 11.3205 14.8212 11.3205 14.4956C11.3205 14.17 11.4365 13.8928 11.6683 13.6639C11.9001 13.435 12.1788 13.3206 12.5044 13.3206C12.83 13.3206 13.1072 13.4365 13.3361 13.6683C13.565 13.9002 13.6795 14.1789 13.6795 14.5044C13.6795 14.83 13.5635 15.1072 13.3317 15.3361C13.0999 15.565 12.8212 15.6795 12.4956 15.6795ZM7.49558 11.1795C7.17001 11.1795 6.89278 11.0635 6.66387 10.8317C6.43499 10.5999 6.32054 10.3212 6.32054 9.9956C6.32054 9.67003 6.43647 9.39279 6.66831 9.16389C6.90015 8.935 7.17885 8.82056 7.50442 8.82056C7.82999 8.82056 8.10722 8.93648 8.33613 9.16833C8.56501 9.40016 8.67946 9.67886 8.67946 10.0044C8.67946 10.33 8.56353 10.6072 8.33169 10.8361C8.09985 11.065 7.82115 11.1795 7.49558 11.1795ZM12.4956 11.1795C12.17 11.1795 11.8928 11.0635 11.6639 10.8317C11.435 10.5999 11.3205 10.3212 11.3205 9.9956C11.3205 9.67003 11.4365 9.39279 11.6683 9.16389C11.9001 8.935 12.1788 8.82056 12.5044 8.82056C12.83 8.82056 13.1072 8.93648 13.3361 9.16833C13.565 9.40016 13.6795 9.67886 13.6795 10.0044C13.6795 10.33 13.5635 10.6072 13.3317 10.8361C13.0999 11.065 12.8212 11.1795 12.4956 11.1795ZM7.49558 6.67947C7.17001 6.67947 6.89278 6.56355 6.66387 6.3317C6.43499 6.09987 6.32054 5.82117 6.32054 5.4956C6.32054 5.17003 6.43647 4.89279 6.66831 4.66389C6.90015 4.435 7.17885 4.32056 7.50442 4.32056C7.82999 4.32056 8.10722 4.43648 8.33613 4.66833C8.56501 4.90016 8.67946 5.17886 8.67946 5.50443C8.67946 5.83 8.56353 6.10724 8.33169 6.33614C8.09985 6.56503 7.82115 6.67947 7.49558 6.67947ZM12.4956 6.67947C12.17 6.67947 11.8928 6.56355 11.6639 6.3317C11.435 6.09987 11.3205 5.82117 11.3205 5.4956C11.3205 5.17003 11.4365 4.89279 11.6683 4.66389C11.9001 4.435 12.1788 4.32056 12.5044 4.32056C12.83 4.32056 13.1072 4.43648 13.3361 4.66833C13.565 4.90016 13.6795 5.17886 13.6795 5.50443C13.6795 5.83 13.5635 6.10724 13.3317 6.33614C13.0999 6.56503 12.8212 6.67947 12.4956 6.67947Z" fill="black" fill-opacity="0.3"/>
+                        </g>
+                    </svg>`
 
-  document.querySelectorAll('#icon').forEach(img => img.src = icon)
+    document.querySelectorAll('.firstColumn').forEach(element => {
+        const icon = document.createElement('div');
+        icon.innerHTML = dragIcon;
+        icon.style.cursor = 'grab';
+        element.insertBefore(icon, element.firstChild);
+    });
 
+    document.querySelectorAll('.editable').forEach(element => {
+        element.addEventListener('keypress', function (e) {
+            console.log(this.innerText.length);
+            if (this.innerText.length > 18) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+    });
 
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
-
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text")
-    const sourceRow = document.getElementById(data)
-    const targetRow = ev.target.parentNode.closest('tr')
-    const targetIndex = Array.from(targetRow.parentNode.children).indexOf(targetRow)
-    const sourceIndex = Array.from(sourceRow.parentNode.children).indexOf(sourceRow)
-    if (sourceIndex === targetIndex) {
-      return
-    } else if (sourceIndex < targetIndex) {
-      targetRow.after(sourceRow)
-    } else {
-      targetRow.before(sourceRow)
+    function allowDrop(ev) {
+        ev.preventDefault();
     }
-  }
 
-  function clearColors(target) {
-    const list = target.parentElement.children
-    for (let span of list) {
-      span.style.backgroundColor = 'transparent'
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
     }
-  }
 
-  document.addEventListener('click', function (e) {
-    if (e.target && e.target.tagName === 'SPAN') {
-      clearColors(e.target)
-      if (e.target.dataset.id === '-2') {
-        e.target.nextElementSibling.style.backgroundColor = 'rgb(253, 33, 37)';
-        e.target.style.backgroundColor = 'rgb(253, 33, 37)';
-      } else if (e.target.dataset.id === '-1') {
-        e.target.style.backgroundColor = 'rgb(253, 33, 37)';
-      } else if (e.target.dataset.id === '+1') {
-        e.target.style.backgroundColor = 'rgb(36, 140, 41)';
-      } else if (e.target.dataset.id === '+2') {
-        e.target.previousElementSibling.style.backgroundColor = 'rgb(36, 140, 41)';
-        e.target.style.backgroundColor = 'rgb(36, 140, 41)';
-      }
-    }
-  })
-
-  function refreshScores() {
-    const spans = document.querySelectorAll('span')
-    for (let span of spans) {
-      span.style.backgroundColor = 'transparent'
-    }
-  }
-
-  function exportTableToCSV(filename) {
-    var csv = [];
-    var rows = document.querySelectorAll(".score-table .includeInCSV");
-
-    // Extract header
-    var header = [];
-    var headerCells = rows[0].querySelectorAll("th .editable");
-    header.push("");
-    headerCells.forEach(cell => header.push(cell.innerText.trim()));
-    csv.push(header.join(","));
-
-    // Extract data rows
-    for (var i = 1; i < rows.length; i++) {
-      var row = [];
-      var firstCell = rows[i].querySelector("td .editable");
-      row.push(firstCell ? firstCell.innerText.trim() : "");
-
-      var scoreCells = rows[i].querySelectorAll("td .header-points span");
-      for (var j = 0; j < scoreCells.length; j += 4) {
-        var score = "";
-        if (scoreCells[j + 3].style.backgroundColor === 'rgb(36, 140, 41)') { // +2
-          score = '+2';
-        } else if (scoreCells[j + 2].style.backgroundColor === 'rgb(36, 140, 41)') { // +1
-          score = '+1';
-        } else if (scoreCells[j].style.backgroundColor === 'rgb(253, 33, 37)') { // -2
-          score = '-2';
-        } else if (scoreCells[j + 1].style.backgroundColor === 'rgb(253, 33, 37)') { // -1
-          score = '-1';
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text")
+        const sourceRow = document.getElementById(data)
+        const targetRow = ev.target.parentNode.closest('tr')
+        const targetIndex = Array.from(targetRow.parentNode.children).indexOf(targetRow)
+        const sourceIndex = Array.from(sourceRow.parentNode.children).indexOf(sourceRow)
+        if (sourceIndex === targetIndex) {
+            return
+        } else if (sourceIndex < targetIndex) {
+            targetRow.after(sourceRow)
+        } else {
+            targetRow.before(sourceRow)
         }
-        row.push(score);
-      }
-      csv.push(row.join(","));
     }
 
-    // Download CSV
-    downloadCSV(csv.join("\n"), filename);
-  }
+    function clearColors(target) {
+        const list = target.parentElement.children
+        for (let span of list) {
+            span.style.backgroundColor = 'transparent'
+        }
+    }
 
-  function downloadCSV(csv, filename) {
-    var csvFile;
-    var downloadLink;
+    document.addEventListener('click', function (e) {
+        if (e.target && e.target.tagName === 'SPAN') {
+            clearColors(e.target)
+            if (e.target.dataset.id === '-2') {
+                e.target.nextElementSibling.style.backgroundColor = 'rgb(253, 33, 37)';
+                e.target.style.backgroundColor = 'rgb(253, 33, 37)';
+            } else if (e.target.dataset.id === '-1') {
+                e.target.style.backgroundColor = 'rgb(253, 33, 37)';
+            } else if (e.target.dataset.id === '+1') {
+                e.target.style.backgroundColor = 'rgb(36, 140, 41)';
+            } else if (e.target.dataset.id === '+2') {
+                e.target.previousElementSibling.style.backgroundColor = 'rgb(36, 140, 41)';
+                e.target.style.backgroundColor = 'rgb(36, 140, 41)';
+            }
+        }
+    })
 
-    // CSV file
-    csvFile = new Blob([csv], { type: "text/csv" });
+    function refreshScores() {
+        const spans = document.querySelectorAll('span')
+        for (let span of spans) {
+            span.style.backgroundColor = 'transparent'
+        }
+    }
 
-    // Download link
-    downloadLink = document.createElement("a");
+    function exportTableToCSV(filename) {
+        var csv = [];
+        var rows = document.querySelectorAll(".score-table .includeInCSV");
 
-    // File name
-    downloadLink.download = filename;
+        // Extract header
+        var header = [];
+        var headerCells = rows[0].querySelectorAll("th .editable");
+        header.push("");
+        headerCells.forEach(cell => header.push(cell.innerText.trim()));
+        csv.push(header.join(","));
 
-    // Create a link to the file
-    downloadLink.href = window.URL.createObjectURL(csvFile);
+        // Extract data rows
+        for (var i = 1; i < rows.length; i++) {
+            var row = [];
+            var firstCell = rows[i].querySelector("td .editable");
+            row.push(firstCell ? firstCell.innerText.trim() : "");
 
-    // Hide link
-    downloadLink.style.display = "none";
+            var scoreCells = rows[i].querySelectorAll("td .header-points span");
+            for (var j = 0; j < scoreCells.length; j += 4) {
+                var score = "";
+                if (scoreCells[j + 3].style.backgroundColor === 'rgb(36, 140, 41)') { // +2
+                    score = '+2';
+                } else if (scoreCells[j + 2].style.backgroundColor === 'rgb(36, 140, 41)') { // +1
+                    score = '+1';
+                } else if (scoreCells[j].style.backgroundColor === 'rgb(253, 33, 37)') { // -2
+                    score = '-2';
+                } else if (scoreCells[j + 1].style.backgroundColor === 'rgb(253, 33, 37)') { // -1
+                    score = '-1';
+                }
+                row.push(score);
+            }
+            csv.push(row.join(","));
+        }
 
-    // Add the link to the DOM
-    document.body.appendChild(downloadLink);
+        // Download CSV
+        downloadCSV(csv.join("\n"), filename);
+    }
 
-    // Click the link
-    downloadLink.click();
-  }
+    function downloadCSV(csv, filename) {
+        var csvFile;
+        var downloadLink;
+
+        // CSV file
+        csvFile = new Blob([csv], {type: "text/csv"});
+
+        // Download link
+        downloadLink = document.createElement("a");
+
+        // File name
+        downloadLink.download = filename;
+
+        // Create a link to the file
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+
+        // Hide link
+        downloadLink.style.display = "none";
+
+        // Add the link to the DOM
+        document.body.appendChild(downloadLink);
+
+        // Click the link
+        downloadLink.click();
+    }
 
 </script>
 <style>
-  :root {
-    --green: rgb(36, 140, 41);
-    --red: rgb(253, 33, 37);
-  }
+    :root {
+        --green: rgb(36, 140, 41);
+        --red: rgb(253, 33, 37);
+    }
 
-  .container {
-    margin: 0 auto;
-    padding: 20px;
-  }
+    * {
+        box-sizing: border-box;
+        font-weight: 400 !important;
+        font-size: 12px;
+    }
 
-  .score-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 20px 0;
-  }
+    .container {
+        width: 738px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: sf-apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 12px;
+        color: #000000;
+        font-weight: 400;
+    }
 
-  .firstColumn {
-    display: flex;
-    align-items: center;
-    padding: 0;
-  }
+    .score-table {
+        table-layout: fixed;
+        width: 698px;
+        border-collapse: separate;
+        border-spacing: 20px 0;
+        color: #000000;
+    }
 
-  .firstColumn img {
-    cursor: grab;
-  }
+    .firstColumn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5px;
+    }
 
-  .editable {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3px 5px;
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+    .firstColumn img {
+        cursor: grab;
+    }
 
-  .header-points {
-    display: flex;
-    justify-content: space-between;
-    height: calc(100%);
+    tbody tr,
+    tbody td,
+    .includeInCSV {
+        height: 36px;
+    }
 
-  }
+    th:first-of-type {
+        width: 160px;
+    }
 
-  .header-points span {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(204, 204, 204);
-    border-bottom: none;
-    border-top: none;
-    border-collapse: collapse;
-    color: rgb(123, 123, 123);
-  }
+    th .editable {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .header-points span:first-child {
-    border-left: none;
-  }
+    .editable {
+        padding: 3px 5px;
+        max-width: 140px;
+        white-space: nowrap;
+    }
 
-  .header-points span:last-child {
-    border-right: none;
-  }
+    .editable:focus {
+        outline: none;
+        border: 1px solid #000000;
+    }
 
-  .score-table th,
-  .score-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    background-color: #F5F5F5;
-  }
+    .header-points {
+        display: flex;
+        justify-content: space-between;
+        height: calc(100%);
+    }
 
-  .buttons {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 0 10px;
-  }
+    .header-points span {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(204, 204, 204);
+        border-bottom: none;
+        border-top: none;
+        border-collapse: collapse;
+    }
 
-  .refresh-button,
-  .export-button {
-    background-color: #F5F5F5;
-    color: rgb(123, 123, 123);
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid rgb(204, 204, 204);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .header-points span:first-child {
+        border-left: none;
+    }
 
-  button svg {
-    transform: scale(1.5);
-    overflow: hidden;
-  }
+    .header-points span:last-child {
+        border-right: none;
+    }
 
-  .buttons span {
-    display: block;
-    position: relative;
-    z-index: 2;
-  }
+    .score-table th,
+    .score-table td {
+        border: 1px solid #ccc;
+        text-align: center;
+        background-color: #F5F5F5;
+    }
+
+    .buttons {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .refresh-button,
+    .export-button {
+        background-color: #F5F5F5;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid rgb(204, 204, 204);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+    }
+
+    .refresh-button:hover, .export-button:hover {
+        background-color: #BCBCBC;
+        color: #F5F5F5;
+    }
+
+    .refresh-button .hover-icon {
+        display: none;
+    }
+
+    .refresh-button:hover .hover-icon {
+        display: flex;
+        border-color: #F5F5F5;
+    }
+
+    .refresh-button:hover span {
+        color: #F5F5F5;
+    }
+
+    .refresh-button .stable-icon {
+        display: flex;
+    }
+
+    .refresh-button:hover .stable-icon {
+        display: none;
+    }
+
+    .export-button .hover-icon {
+        display: none;
+    }
+
+    .export-button:hover .hover-icon {
+        display: flex;
+        border-color: #F5F5F5;
+    }
+
+    .export-button:hover span {
+        color: #F5F5F5;
+    }
+
+    .export-button .stable-icon {
+        display: flex;
+    }
+
+    .export-button:hover .stable-icon {
+        display: none;
+    }
+
+    .stable-icon, .hover-icon {
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
 </style>
