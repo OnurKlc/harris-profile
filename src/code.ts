@@ -26,6 +26,10 @@ async function createTable(tableData: { headers: string[]; rows: {criteria: stri
     parentFrame.x = 0;
     parentFrame.y = 0;
     parentFrame.strokes = [{ type: 'SOLID', color: borderColor }]
+    parentFrame.strokeBottomWeight = 2;
+    parentFrame.strokeLeftWeight = 2;
+    parentFrame.strokeRightWeight = 2;
+    parentFrame.strokeTopWeight = 2
     parentFrame.fills = [{ type: 'SOLID', color: backgroundColor }]
     // Table header
     for (let i = 0; i < tableData.headers.length; i++) {
