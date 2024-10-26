@@ -2,7 +2,7 @@
   "name": "Harris Profile",
   "id": "1351658412520029980",
   "api": "1.0.0",
-  "main": "code.js",
+  "main": "dist/code.js",
   "capabilities": [],
   "enableProposedApi": false,
   "editorType": [

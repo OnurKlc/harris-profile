@@ -1,3 +1,6 @@
+<head>
+    <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
+</head>
 <div class="container">
     <table class="score-table">
         <thead>
@@ -276,8 +279,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#000000"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg>
             </span>
         </button>
-        <button class="export-button" onclick="exportTableToCSV('harris_profile.csv')">
-            <span>Export as SVG</span>
+        <button class="export-button" onclick="exportTable()">
+            <span>Export</span>
             <span class="hover-icon">
               <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="#FFFFFF"><path
                       d="M240-40q-33 0-56.5-23.5T160-120v-440q0-33 23.5-56.5T240-640h120v80H240v440h480v-440H600v-80h120q33 0 56.5 23.5T800-560v440q0 33-23.5 56.5T720-40H240Zm200-280v-447l-64 64-56-57 160-160 160 160-56 57-64-64v447h-80Z" /></svg>
@@ -370,70 +373,41 @@
         }
     }
 
-    function exportTableToCSV(filename) {
-        var csv = [];
-        var rows = document.querySelectorAll(".score-table .includeInCSV");
+    function exportTable() {
+        const table = document.querySelector('.score-table');
+        const json = {
+            headers: [],
+            rows: []
+        };
 
-        // Extract header
-        var header = [];
-        var headerCells = rows[0].querySelectorAll("th .editable");
-        header.push("");
-        headerCells.forEach(cell => header.push(cell.innerText.trim()));
-        csv.push(header.join(","));
+        // Get headers
+        const headers = table.querySelectorAll('thead th .editable');
+        headers.forEach(header => {
+            json.headers.push(header.innerText);
+        });
 
-        // Extract data rows
-        for (var i = 1; i < rows.length; i++) {
-            var row = [];
-            var firstCell = rows[i].querySelector("td .editable");
-            row.push(firstCell ? firstCell.innerText.trim() : "");
-
-            var scoreCells = rows[i].querySelectorAll("td .header-points span");
-            for (var j = 0; j < scoreCells.length; j += 4) {
-                var score = "";
-                if (scoreCells[j + 3].style.backgroundColor === 'rgb(36, 140, 41)') { // +2
-                    score = '+2';
-                } else if (scoreCells[j + 2].style.backgroundColor === 'rgb(36, 140, 41)') { // +1
-                    score = '+1';
-                } else if (scoreCells[j].style.backgroundColor === 'rgb(253, 33, 37)') { // -2
-                    score = '-2';
-                } else if (scoreCells[j + 1].style.backgroundColor === 'rgb(253, 33, 37)') { // -1
-                    score = '-1';
-                }
-                row.push(score);
+        // Get rows
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            const rowData = {
+                criteria: '',
+                scores: []
+            };
+            const criteria = row.querySelector('.firstColumn .editable');
+            if (criteria) {
+                rowData.criteria = criteria.innerText;
             }
-            csv.push(row.join(","));
-        }
-
-        // Download CSV
-        downloadCSV(csv.join("\n"), filename);
+            const scores = row.querySelectorAll('.header-points span');
+            scores.forEach(score => {
+                rowData.scores.push({
+                    value: score.dataset.id,
+                    color: score.style.backgroundColor === 'rgb(36, 140, 41)' ? 'green' : score.style.backgroundColor === 'rgb(253, 33, 37)' ? 'red' : 'transparent'
+                });
+            });
+            json.rows.push(rowData);
+        });
+        parent.postMessage({pluginMessage: {type: 'export', data: json}}, '*');
     }
-
-    function downloadCSV(csv, filename) {
-        var csvFile;
-        var downloadLink;
-
-        // CSV file
-        csvFile = new Blob([csv], {type: "text/csv"});
-
-        // Download link
-        downloadLink = document.createElement("a");
-
-        // File name
-        downloadLink.download = filename;
-
-        // Create a link to the file
-        downloadLink.href = window.URL.createObjectURL(csvFile);
-
-        // Hide link
-        downloadLink.style.display = "none";
-
-        // Add the link to the DOM
-        document.body.appendChild(downloadLink);
-
-        // Click the link
-        downloadLink.click();
-    }
-
 </script>
 <style>
     :root {
