@@ -118,7 +118,7 @@ async function createTable(tableData: { headers: string[]; rows: {criteria: stri
       }
     }
   } catch (error) {
-    console.error('ananoy', error)
+    console.error(error)
   }
   figma.closePlugin();
 }
