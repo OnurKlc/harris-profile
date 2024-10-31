@@ -14,7 +14,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // the *figma document* via the figma global object.
 // You can access browser APIs in the <script> tag inside "ui.html" which has a
 // full browser environment (See https://www.figma.com/plugin-docs/how-plugins-run).
-figma.showUI(__html__, { width: 1000, height: 700 });
+figma.showUI(__html__, { width: 750, height: 450 });
 figma.ui.onmessage = (msg) => {
     if (msg.type === 'export') {
         createTable(msg.data);
@@ -127,7 +127,7 @@ function createTable(tableData) {
             }
         }
         catch (error) {
-            console.error('ananoy', error);
+            console.error(error);
         }
         figma.closePlugin();
     });

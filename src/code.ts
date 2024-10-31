@@ -6,7 +6,7 @@
 // You can access browser APIs in the <script> tag inside "ui.html" which has a
 // full browser environment (See https://www.figma.com/plugin-docs/how-plugins-run).
 
-figma.showUI(__html__, {width: 1000, height: 700});
+figma.showUI(__html__, {width: 750, height: 450});
 
 figma.ui.onmessage =  (msg) => {
   if (msg.type === 'export') {
