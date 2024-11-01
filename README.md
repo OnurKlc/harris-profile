@@ -1,40 +1,20 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+# **Harris Profile Figma Plugin**
 
-  https://www.figma.com/plugin-docs/plugin-quickstart-guide/
+**Evaluate and compare your design ideas quickly and effectively.**  
+The **Harris Profile** plugin allows designers to score and visualize up to three design concepts against a set of prioritized criteria. The plugin uses the Harris Profile method to help you identify the most suitable design for your needs.
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+## **Features**
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+- Compare up to three design concepts side-by-side
+- Score each concept based on customized criteria with a flexible rating system
+- Visualize the results in a color-coded format to make choosing the best option simple
+- Export your results directly to the Figma canvas
 
-  https://nodejs.org/en/download/
+## **Support**
+For questions or support, reach out via email at [harris.profile.plugin@gmail.com](harris.profile.plugin@gmail.com).
 
-Next, install TypeScript using the command:
+## **Acknowledgments**
+This plugin is inspired by the Harris Profile method, based on the works:
 
-  npm install -g typescript
-
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
-
-  npm install --save-dev @figma/plugin-typings
-
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
-
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
-
-For more information, visit https://www.typescriptlang.org/
-
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
-
-We recommend writing TypeScript code using Visual Studio code:
-
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "npm: watch". You will have to do this again every time
-    you reopen Visual Studio Code.
-
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+**Harris, John S.** *The Product Profile Chart: A Graphical Means of Appraising and Selecting New Products*, 1961.
+**Roozenburg, Norbert FM; Eekels, Johannes.** *Product Design: Fundamentals and Methods*, Wiley, 1995.
