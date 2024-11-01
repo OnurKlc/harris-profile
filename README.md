@@ -1,6 +1,7 @@
 # **Harris Profile Figma Plugin**
 
 **Evaluate and compare your design ideas quickly and effectively.**  
+
 The **Harris Profile** plugin allows designers to score and visualize up to three design concepts against a set of prioritized criteria. The plugin uses the Harris Profile method to help you identify the most suitable design for your needs.
 
 ## **Features**
